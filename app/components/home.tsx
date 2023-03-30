@@ -76,9 +76,8 @@ export function ChatItem(props: {
 }) {
   return (
     <div
-      className={`${styles["chat-item"]} ${
-        props.selected && styles["chat-item-selected"]
-      }`}
+      className={`${styles["chat-item"]} ${props.selected && styles["chat-item-selected"]
+        }`}
       onClick={props.onClick}
     >
       <div className={styles["chat-item-title"]}>{props.title}</div>
@@ -293,25 +292,25 @@ export function Chat(props: {
     .concat(
       isLoading
         ? [
-            {
-              role: "assistant",
-              content: "……",
-              date: new Date().toLocaleString(),
-              preview: true,
-            },
-          ]
+          {
+            role: "assistant",
+            content: "……",
+            date: new Date().toLocaleString(),
+            preview: true,
+          },
+        ]
         : []
     )
     .concat(
       userInput.length > 0
         ? [
-            {
-              role: "user",
-              content: userInput,
-              date: new Date().toLocaleString(),
-              preview: true,
-            },
-          ]
+          {
+            role: "user",
+            content: userInput,
+            date: new Date().toLocaleString(),
+            preview: true,
+          },
+        ]
         : []
     );
 
@@ -432,7 +431,7 @@ export function Chat(props: {
                       </div>
                     )}
                   {(message.preview || message.content.length === 0) &&
-                  !isUser ? (
+                    !isUser ? (
                     <LoadingIcon />
                   ) : (
                     <div
@@ -603,9 +602,8 @@ export function Home() {
 
   return (
     <div
-      className={`${
-        config.tightBorder ? styles["tight-container"] : styles.container
-      }`}
+      className={`${config.tightBorder ? styles["tight-container"] : styles.container
+        }`}
     >
       <div
         className={styles.sidebar + ` ${showSideBar && styles["sidebar-show"]}`}
@@ -613,7 +611,10 @@ export function Home() {
         <div className={styles["sidebar-header"]}>
           <div className={styles["sidebar-title"]}>ChatGPT Next</div>
           <div className={styles["sidebar-sub-title"]}>
-            Build your own AI assistant.
+            我是一款多功能的自然语言处理工具，可以为普通用户、教育工作者、企业商家和科研人员提供全方位的服务。我可以回答各种问题、提供建议、生成文本、提供课程资料和学习资源，以及进行市场调研、竞争分析和文献检索等......
+            <p>全部收入用于充值ChatGPT，请小伙伴们谅解</p>
+            <p>访问码：29.9元/月</p>
+            <p>微信：<a href="weixin://contacts/profile/wangweiwei19909012">wangweiwei19909012</a>（备注访问码秘钥）</p>
           </div>
           <div className={styles["sidebar-logo"]}>
             <ChatGptIcon />
